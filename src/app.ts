@@ -5,7 +5,7 @@ const _ = require('lodash');
 
 const notes = require('./notes');
 
-const command = process.argv[2];
+const command = (process.argv as any)[2];
 console.log('Command:', command);
 console.log(process.argv);
 
