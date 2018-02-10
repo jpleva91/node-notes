@@ -1,26 +1,31 @@
+import {Inject} from "typedi";
+
 console.log('Starting app...');
 
 const fs = require('fs');
 const _ = require('lodash');
+const yargs = require('yargs');
 
-const notes = require('./notes');
+import Notes from './notes';
 
+const argv = yargs.argv;
 const command = (process.argv as any)[2];
+const { title, body } = argv;
 console.log('Command:', command);
-console.log(process.argv);
+console.log('Yargs', argv);
 
 switch (command) {
     case 'add':
-        console.log('Adding new note');
+        Notes.addNote(title, body);
         break;
     case 'list':
-        console.log('Listing all notes');
+        Notes.getAll();
         break;
     case 'read':
-        console.log('Fetching note');
+        Notes.read(title);
         break;
     case 'remove':
-        console.log('Removing note');
+        Notes.remove(title);
         break;
     default:
         console.log('Command not recognized');
