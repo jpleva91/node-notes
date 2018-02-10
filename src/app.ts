@@ -22,10 +22,10 @@ switch (command) {
         Notes.getAll();
         break;
     case 'read':
-        Notes.read(title);
+        Notes.getNote(title);
         break;
     case 'remove':
-        Notes.remove(title);
+        Notes.removeNote(title);
         break;
     default:
         console.log('Command not recognized');

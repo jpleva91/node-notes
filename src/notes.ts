@@ -10,11 +10,11 @@ export default class Notes {
         console.log('Getting all notes');
     };
 
-    public static read = (title: string) => {
-        console.log('Fetching note', title);
+    public static getNote = (title: string) => {
+        console.log('Getting note', title);
     };
 
-    public static remove = (title: string) => {
+    public static removeNote = (title: string) => {
         console.log('Removing note', title);
     };
 
