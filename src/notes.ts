@@ -59,7 +59,23 @@ export default class Notes {
     };
 
     public removeNote = (title: string) => {
-        console.log('Removing note', title);
+        // fetch notes
+        const notes = this.fetchNotes();
+        // filter notes, removing where title equals argument
+        const filteredNotes = notes.filter((note: NoteInterface) => note.title !== title);
+        // save new notes array
+        this.saveNotes(filteredNotes);
+        // print result to the console
+        notes.length !== filteredNotes.length
+            ? console.log(`
+                Note "${title}" deleted.
+            `)
+            : console.log(`
+                Note "${title}" not found.
+                --
+                Please try another title.
+            `)
+
     };
 
 }

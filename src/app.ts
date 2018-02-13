@@ -15,6 +15,7 @@ console.log('Yargs', argv);
 const notes = new Notes();
 
 switch (command) {
+
     case 'add':
         notes.addNote(title, body);
         break;
@@ -29,4 +30,5 @@ switch (command) {
         break;
     default:
         console.log('Command not recognized');
+
 }
