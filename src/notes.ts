@@ -51,11 +51,45 @@ export default class Notes {
     };
 
     public getAll = () => {
-        console.log('Getting all notes');
+        const notes = this.fetchNotes();
+
+        if (notes.length > 0) {
+            console.log(`
+                Getting all notes...
+                --
+                Current Notes by Title:
+            `);
+
+            return notes.forEach((note: NoteInterface)  => {
+                console.log(`${note.title}`)
+            })
+        }
+
+        console.log(`
+            No notes found.
+            --
+            Please use the add command to create a new note.
+         `)
     };
 
     public getNote = (title: string) => {
-        console.log('Getting note', title);
+        const note = this.fetchNotes().filter((note: NoteInterface) => note.title === title);
+
+        if (note.length > 0) {
+            return console.log(`
+                Fetching Note...
+                --
+                Title: ${title},
+                --
+                Body: ${note.body}
+            `);
+        }
+
+        console.log(`
+            No note found.
+            --
+            Please try another title or use the list command to view all notes.
+         `)
     };
 
     public removeNote = (title: string) => {
@@ -74,8 +108,7 @@ export default class Notes {
                 Note "${title}" not found.
                 --
                 Please try another title.
-            `)
-
+            `);
     };
 
 }
