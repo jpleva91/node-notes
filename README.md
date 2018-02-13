@@ -1,5 +1,5 @@
 # node-notes
---
+
 
 ## Getting Started
 
@@ -9,7 +9,6 @@ npm install
 ### Start the project by running
 tsc && npm start
 
---
 
 ### Using Commands
 npm start [Command]
