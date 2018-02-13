@@ -1,5 +1,3 @@
-import {Inject} from "typedi";
-
 console.log('Starting app...');
 
 const fs = require('fs');
@@ -14,18 +12,20 @@ const { title, body } = argv;
 console.log('Command:', command);
 console.log('Yargs', argv);
 
+const notes = new Notes();
+
 switch (command) {
     case 'add':
-        Notes.addNote(title, body);
+        notes.addNote(title, body);
         break;
     case 'list':
-        Notes.getAll();
+        notes.getAll();
         break;
     case 'read':
-        Notes.getNote(title);
+        notes.getNote(title);
         break;
     case 'remove':
-        Notes.removeNote(title);
+        notes.removeNote(title);
         break;
     default:
         console.log('Command not recognized');
