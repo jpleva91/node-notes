@@ -6,30 +6,33 @@
 ### Clone the project and run 
 npm install
 
-### Start the project by running
-tsc && npm start
+### Transpile Typescript to Javascript by running
+tsc
+
+### Starting the app
+cd dist && node app.js --help
 
 
 ### Using Commands
-npm start [Command]
+node app.js [Command]
 
 ### Commands
 
 #### help
-npm start --help
+node app.js --help
 
 #### add
 Create a new note.
-Example: npm start add --title='This is a title' --body='This is the body'
+Example: node app.js add -t='This is a title' -b='This is the body'
 
 #### list
 List all current notes by title.
-Example: npm start list
+Example: node app.js list
 
 #### read
 Read a note with a given title.
-Example: npm start read --title='This is a title'
+Example: node app.js read -t='This is a title'
 
 #### remove
 Delete a note with a given title.
-Example npm start remove --title='This is a title'
+Example node app.js remove -t='This is a title'
