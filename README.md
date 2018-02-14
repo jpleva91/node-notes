@@ -15,6 +15,9 @@ npm start [Command]
 
 ### Commands
 
+#### help
+npm start --help
+
 #### add
 Create a new note.
 Example: npm start add --title='This is a title' --body='This is the body'
