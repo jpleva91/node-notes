@@ -1,4 +1,4 @@
-import { NoteInterface } from './interfaces/note.interface'
+import { NoteInterface } from './interface/note.interface'
 
 console.log('Starting notes...');
 
@@ -74,7 +74,6 @@ export default class Notes {
 
     public getNote = (title: string) => {
         const note = this.fetchNotes().filter((note: NoteInterface) => note.title === title);
-
         if (note.length > 0) {
             return console.log(`
                 Fetching Note...
